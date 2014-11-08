@@ -2,4 +2,10 @@ Edwin Ho
 Vincent Chang
 Mark Pareja
 Alex Chapp
+<<<<<<< HEAD
 
+=======
+Vincent Chang
+Jon Desiderio
+Kevin Wong
+>>>>>>> 3dae8c811cec53d2925f0c9eaa6043b72858ffce
