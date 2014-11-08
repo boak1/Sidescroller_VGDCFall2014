@@ -2,15 +2,17 @@
 using System.Collections;
 
 public class PlatformData : MonoBehaviour {
-	public int offset = 2;
 	// Use this for initialization
 	void Start () {
-	
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+		transform.position = new Vector3(transform.position.x-0.2f, transform.position.y, transform.position.z);
 	}
 
+	public float offset(){
+		return 4f;
+	}
 }

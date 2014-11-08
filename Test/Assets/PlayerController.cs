@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour {
 	public GameObject platform1;
 	public GameObject platform2;
 	public GameObject platform3;
-
+	GameObject current_platform;
 	// Use this for initialization
 	void Start () {
 
@@ -16,19 +16,18 @@ public class PlayerController : MonoBehaviour {
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.A))
 		{
-			//LX = nextLX; LY = nextLY;  //moves player to (Lx, LY)
-
-			//Debug.Log ("a pressed - move player to x location");  //redraw character
-			transform.position = platform1.transform.position + new Vector3(0f, 5f, 0f);
+			current_platform = platform1;
 		}
 		if (Input.GetKeyDown (KeyCode.S)) 
 		{
-			transform.position = platform2.transform.position + new Vector3(0f, 5f, 0f);
+			current_platform = platform2;
 		}
 		if (Input.GetKeyDown (KeyCode.D)) 
 		{
-			transform.position = platform3.transform.position + new Vector3(0f, 5f, 0f);
+			current_platform = platform3;
 		}
+		PlatformData platformData = platform1.GetComponent<PlatformData>();
+		transform.position = current_platform.transform.position + new Vector3(0f, platformData.offset(), 0f);
 	}
 
 	/*
@@ -43,6 +42,7 @@ public class PlayerController : MonoBehaviour {
 		public Vector2 vec(){
 			return new Vector2(platx, platy);
 		}
+
 	}
-*/
+	*/
 }
