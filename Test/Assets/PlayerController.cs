@@ -3,30 +3,30 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour {
 
-	public GameObject platform1;
-	public GameObject platform2;
-	public GameObject platform3;
+	public GameObject platformA;
+	public GameObject platformS;
+	public GameObject platformD;
 	GameObject current_platform;
 	// Use this for initialization
 	void Start () {
-
+		current_platform = platformS;
 	}
 	//int LX = 0f,LY = 0f, nextLX = 10f, nextLY = 0f; //player Coordinates 
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.A))
 		{
-			current_platform = platform1;
+			current_platform = platformA;
 		}
 		if (Input.GetKeyDown (KeyCode.S)) 
 		{
-			current_platform = platform2;
+			current_platform = platformS;
 		}
 		if (Input.GetKeyDown (KeyCode.D)) 
 		{
-			current_platform = platform3;
+			current_platform = platformD;
 		}
-		PlatformData platformData = platform1.GetComponent<PlatformData>();
+		PlatformData platformData = current_platform.GetComponent<PlatformData>();
 		transform.position = current_platform.transform.position + new Vector3(0f, platformData.offset(), 0f);
 	}
 

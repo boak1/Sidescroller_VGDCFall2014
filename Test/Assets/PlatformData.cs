@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class PlatformData : MonoBehaviour {
+	public float offsetValue;
 	// Use this for initialization
 	void Start () {
 
@@ -13,6 +14,6 @@ public class PlatformData : MonoBehaviour {
 	}
 
 	public float offset(){
-		return 4f;
+		return offsetValue;
 	}
 }
