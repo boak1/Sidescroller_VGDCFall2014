@@ -16,6 +16,7 @@ public class LeftWallCollision : MonoBehaviour {
 	void OnTriggerExit2D (Collider2D hitInfo){
 		if (hitInfo.name == "PlatformA") 
 		{
+		
 			hitInfo.transform.position += new Vector3(mainCam.ScreenToWorldPoint(new Vector3(Screen.width*1.65f,0f,0f)).x, 0f, 0f);
 		}
 		if (hitInfo.name == "PlatformS") 
@@ -25,6 +26,10 @@ public class LeftWallCollision : MonoBehaviour {
 		if (hitInfo.name == "PlatformD") 
 		{
 			hitInfo.transform.position += new Vector3(mainCam.ScreenToWorldPoint(new Vector3(Screen.width*1.65f,0f,0f)).x, 0f, 0f);
+
 		}
+		if (hitInfo.name == "Player") {
+						Application.LoadLevel ("deathscene"); //set as a level in unity build settings
+				}
 	}
 }
