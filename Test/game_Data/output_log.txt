@@ -2,21 +2,51 @@ Initialize engine version: 4.5.5f1 (7684ad0c5a44)
 GfxDevice: creating device client; threaded=1
 Direct3D:
     Version:  Direct3D 11.0 [level 11.0]
-    Renderer: NVIDIA GeForce GT 750M (ID=0xfe4)
+    Renderer: NVIDIA GeForce GTX 860M   (ID=0x1392)
     Vendor:   NVIDIA
-    VRAM:     1985 MB
+    VRAM:     1972 MB
 Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\Mark\Desktop\Sidescroller_VGDCFall2014\Sidescroller_VGDCFall2014\Sidescroller_VGDCFall2014\Sidescroller_VGDCFall2014\Test\game_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\Mark\Desktop\Sidescroller_VGDCFall2014\Sidescroller_VGDCFall2014\Sidescroller_VGDCFall2014\Sidescroller_VGDCFall2014\Test\game_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\Mark\Desktop\Sidescroller_VGDCFall2014\Sidescroller_VGDCFall2014\Sidescroller_VGDCFall2014\Sidescroller_VGDCFall2014\Test\game_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\Mark\Desktop\Sidescroller_VGDCFall2014\Sidescroller_VGDCFall2014\Sidescroller_VGDCFall2014\Sidescroller_VGDCFall2014\Test\game_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-- Completed reload, in  0.040 seconds
+Platform assembly: C:\Users\chapp_000\Documents\GitHub\Sidescroller_VGDCFall2014\Test\game_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\chapp_000\Documents\GitHub\Sidescroller_VGDCFall2014\Test\game_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\chapp_000\Documents\GitHub\Sidescroller_VGDCFall2014\Test\game_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\chapp_000\Documents\GitHub\Sidescroller_VGDCFall2014\Test\game_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+- Completed reload, in  0.090 seconds
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
-UnloadTime: 0.218530 ms
+UnloadTime: 0.231958 ms
 Unloading 3 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
 Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 75.
-Total: 0.418672 ms (FindLiveObjects: 0.004276 ms CreateObjectMapping: 0.005131 ms MarkObjects: 0.042765 ms  DeleteObjects: 0.011974 ms)
+Total: 0.443390 ms (FindLiveObjects: 0.006568 ms CreateObjectMapping: 0.004926 ms MarkObjects: 0.041054 ms  DeleteObjects: 0.011495 ms)
+
+UnloadTime: 0.178587 ms
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 113.
+Total: 0.371544 ms (FindLiveObjects: 0.004105 ms CreateObjectMapping: 0.005337 ms MarkObjects: 0.044339 ms  DeleteObjects: 0.004926 ms)
+
+UnloadTime: 0.236064 ms
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 75.
+Total: 0.393303 ms (FindLiveObjects: 0.003694 ms CreateObjectMapping: 0.005747 ms MarkObjects: 0.041465 ms  DeleteObjects: 0.010263 ms)
+
+UnloadTime: 0.235243 ms
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 113.
+Total: 0.372776 ms (FindLiveObjects: 0.004105 ms CreateObjectMapping: 0.005747 ms MarkObjects: 0.042286 ms  DeleteObjects: 0.004926 ms)
+
+UnloadTime: 0.216768 ms
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 75.
+Total: 0.383040 ms (FindLiveObjects: 0.003694 ms CreateObjectMapping: 0.006568 ms MarkObjects: 0.054602 ms  DeleteObjects: 0.010674 ms)
+
+UnloadTime: 0.197062 ms
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 113.
+Total: 0.369081 ms (FindLiveObjects: 0.004105 ms CreateObjectMapping: 0.005747 ms MarkObjects: 0.044339 ms  DeleteObjects: 0.004926 ms)
 
