@@ -1,12 +1,13 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\GameOver.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\RightWallReScroll.cs">
     <Files>
-      <File FileName="Assets\LeftWallCollision.cs" Line="32" Column="44" />
-      <File FileName="Assets\PlayerController.cs" Line="25" Column="37" />
-      <File FileName="Assets\PlatformData.cs" Line="1" Column="1" />
-      <File FileName="Assets\GameSetup.cs" Line="1" Column="1" />
-      <File FileName="Assets\GameOver.cs" Line="13" Column="41" />
+      <File FileName="Assets\Scripts\BackgroundScroll.cs" Line="13" Column="61" />
+      <File FileName="Assets\Scripts\PlatformData.cs" Line="3" Column="1" />
+      <File FileName="Assets\Scripts\GameSetup.cs" Line="8" Column="33" />
+      <File FileName="Assets\Scripts\LeftWallCollision.cs" Line="28" Column="34" />
+      <File FileName="Assets\Scripts\RightWallReScroll.cs" Line="19" Column="110" />
+      <File FileName="Assets\Scripts\PlayerController.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

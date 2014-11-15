@@ -46,11 +46,13 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\GameOver.cs" />
-     <Compile Include="Assets\GameSetup.cs" />
-     <Compile Include="Assets\LeftWallCollision.cs" />
-     <Compile Include="Assets\PlatformData.cs" />
-     <Compile Include="Assets\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\BackgroundScroll.cs" />
+     <Compile Include="Assets\Scripts\GameOver.cs" />
+     <Compile Include="Assets\Scripts\GameSetup.cs" />
+     <Compile Include="Assets\Scripts\LeftWallCollision.cs" />
+     <Compile Include="Assets\Scripts\PlatformData.cs" />
+     <Compile Include="Assets\Scripts\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\RightWallReScroll.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
