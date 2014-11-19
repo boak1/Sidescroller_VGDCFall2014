@@ -16,7 +16,7 @@ public class RightWallReScroll : MonoBehaviour {
 	void OnTriggerExit2D (Collider2D hitInfo){
 		if (hitInfo.name == "BG") 
 		{
-			hitInfo.transform.position += new Vector3(mainCam.ScreenToWorldPoint(new Vector3(Screen.width*2f,0f,0f)).x, 0f, 0f);
+			hitInfo.transform.position += new Vector3(166.4f, 0f, 0f);
 		}
 	}
 }
