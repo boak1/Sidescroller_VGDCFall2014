@@ -3,9 +3,13 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour {
 
+	//asks the programmer to define four variables representing the four different platforms
+	//define them by dragging and dropping game objects into the appropriate variable components attatched to the player controller script
+	//which is attached to the player in the unity inspector
 	public GameObject platformA;
 	public GameObject platformS;
 	public GameObject platformD;
+	public GameObject platformF;
 	GameObject current_platform;
 	// Use this for initialization
 	void Start () {
@@ -14,6 +18,8 @@ public class PlayerController : MonoBehaviour {
 	//int LX = 0f,LY = 0f, nextLX = 10f, nextLY = 0f; //player Coordinates 
 	// Update is called once per frame
 	void Update () {
+
+		//platforms
 		if (Input.GetKeyDown(KeyCode.A))
 		{
 			current_platform = platformA;
@@ -26,6 +32,23 @@ public class PlayerController : MonoBehaviour {
 		{
 			current_platform = platformD;
 		}
+		if (Input.GetKeyDown (KeyCode.F)) 
+		{
+			current_platform = platformF;
+		}
+
+
+		//shooting
+		if (Input.GetKeyDown (KeyCode.J)) 
+		{
+		}
+		if (Input.GetKeyDown (KeyCode.K)) 
+		{
+		}
+		if (Input.GetKeyDown (KeyCode.L)) 
+		{
+		}
+
 		PlatformData platformData = current_platform.GetComponent<PlatformData>();
 		transform.position = current_platform.transform.position + new Vector3(0f, platformData.offset(), 0f);
 	}
