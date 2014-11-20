@@ -11,14 +11,22 @@ public class PlayerController : MonoBehaviour {
 	public GameObject platformD;
 	public GameObject platformF;
 	GameObject current_platform;
+	//set starting health to 3
+	public static int hp = 3;  //static so other scripts can see it. call with Test.hp
 	// Use this for initialization
 	void Start () {
 		current_platform = platformS;
+		hp = 3; //on restarting after a game over hp becomes 3 again
 	}
 	//int LX = 0f,LY = 0f, nextLX = 10f, nextLY = 0f; //player Coordinates 
 	// Update is called once per frame
 	void Update () {
 
+		//hp testing suicide
+		if (Input.GetKeyDown (KeyCode.Space)) {
+						hp -= 1;
+			Debug.Log (hp);
+				}
 		//platforms
 		if (Input.GetKeyDown(KeyCode.A))
 		{
