@@ -55,6 +55,7 @@
      <Compile Include="Assets\Scripts\RightWallReScroll.cs" />
      <Compile Include="Assets\Scripts\bgmMergeClipsAndLoop.cs" />
      <Compile Include="Assets\healthScript.cs" />
+     <Compile Include="Assets\laserScript.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
