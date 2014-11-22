@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour {
 	public GameObject platformD;
 	public GameObject platformF;
 	GameObject current_platform;
+	public treeBoss TBoss;
 	//set starting health to 3
 	public static int hp = 3;  //static so other scripts can see it. call with Test.hp
 	// Use this for initialization
@@ -46,13 +47,25 @@ public class PlayerController : MonoBehaviour {
 		//shooting
 		if (Input.GetKeyDown (KeyCode.J)) 
 		{
+			TBoss.shootBoss("red");
 		}
 		if (Input.GetKeyDown (KeyCode.K)) 
 		{
+			TBoss.shootBoss("blue");
 		}
 		if (Input.GetKeyDown (KeyCode.L)) 
 		{
+			TBoss.shootBoss("green");
 		}
+
+
+		if (Input.GetKeyDown (KeyCode.O)) //activate boss
+		{
+			TBoss.moveBossOnScreen();
+		}
+
+
+
 
 		PlatformData platformData = current_platform.GetComponent<PlatformData>();
 		transform.position = current_platform.transform.position + new Vector3(0f, platformData.offset(), 0f);
