@@ -22,11 +22,8 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		//hp testing suicide
-		if (Input.GetKeyDown (KeyCode.Space)) {
-						hp -= 1;
-			Debug.Log (hp);
-				}
+
+				
 		//platforms
 		if (Input.GetKeyDown(KeyCode.A))
 		{
@@ -60,6 +57,8 @@ public class PlayerController : MonoBehaviour {
 		PlatformData platformData = current_platform.GetComponent<PlatformData>();
 		transform.position = current_platform.transform.position + new Vector3(0f, platformData.offset(), 0f);
 	}
+
+
 
 	/*
 	GameObject Platform(){

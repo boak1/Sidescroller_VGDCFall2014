@@ -5,6 +5,7 @@ public class laserScript : MonoBehaviour {
 	//these are picutres of sprites
 	public Sprite preLaser;
 	public Sprite postLaser;
+	public Sprite invisible;
 	private float cooldown;
 	public float cooldownStart;
 
@@ -12,9 +13,9 @@ public class laserScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		//spriteRenderL = GetComponent<SpriteRenderer>();
-		//if (spriteRenderL.sprite == null)
-		//spriteRenderL.sprite = preLaser;
+		spriteRenderL = GetComponent<SpriteRenderer>();
+		if (spriteRenderL.sprite == null)
+		spriteRenderL.sprite = invisible;
 		cooldown = cooldownStart;
 	
 	}
@@ -22,19 +23,30 @@ public class laserScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		cooldown -= Time.deltaTime;
-		if (cooldown == 1) {
+		if (cooldown > 0.1 && cooldown <= 1.1) {
 			spriteRenderL.sprite = preLaser;
 
 				} 
-		else if (cooldown == 0) {
+		else if (cooldown > 0 && cooldown <= 0.1) {
 			spriteRenderL.sprite = postLaser;
-			cooldown = cooldownStart;
 				} 
+		else if(cooldown <= 0){
+			cooldown = cooldownStart;
+
+		}
 		else {
-			spriteRenderL.sprite = null;
+			spriteRenderL.sprite = invisible;
 				}
 
 	
+	}
+
+	void OnTriggerStay2D(Collider2D hitInfo){
+		Debug.Log ("You got hit");
+
+		if (hitInfo.name == "Player" && spriteRenderL.sprite == postLaser) {
+			PlayerController.hp -= 1;
+		}
 	}
 
 }
