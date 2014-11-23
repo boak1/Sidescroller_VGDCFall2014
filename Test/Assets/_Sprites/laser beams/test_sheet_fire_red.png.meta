@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: e1e3c3c452518af47a34ec73bce145e5
+guid: f2fd87c8d67996b498fb4404afa7e2bf
 TextureImporter:
   fileIDToRecycleName:
-    21300000: test_sheet_charge_red_0
-    21300002: test_sheet_charge_red_1
-    21300004: test_sheet_charge_red_2
-    21300006: test_sheet_charge_red_3
-    21300008: test_sheet_charge_red_4
-    21300010: test_sheet_charge_red_5
+    21300000: test_sheet_fire_red_0
+    21300002: test_sheet_fire_red_1
+    21300004: test_sheet_fire_red_2
+    21300006: test_sheet_fire_red_3
+    21300008: test_sheet_fire_red_4
+    21300010: test_sheet_fire_red_5
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -43,13 +43,13 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 50
+  spritePixelsToUnits: 40
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: test_sheet_charge_red_0
+    - name: test_sheet_fire_red_0
       rect:
         serializedVersion: 2
         x: 0
@@ -59,7 +59,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: test_sheet_charge_red_1
+    - name: test_sheet_fire_red_1
       rect:
         serializedVersion: 2
         x: 0
@@ -69,7 +69,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: test_sheet_charge_red_2
+    - name: test_sheet_fire_red_2
       rect:
         serializedVersion: 2
         x: 0
@@ -79,7 +79,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: test_sheet_charge_red_3
+    - name: test_sheet_fire_red_3
       rect:
         serializedVersion: 2
         x: 0
@@ -89,7 +89,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: test_sheet_charge_red_4
+    - name: test_sheet_fire_red_4
       rect:
         serializedVersion: 2
         x: 0
@@ -99,7 +99,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: test_sheet_charge_red_5
+    - name: test_sheet_fire_red_5
       rect:
         serializedVersion: 2
         x: 0

@@ -29,6 +29,7 @@ public class laserScript : MonoBehaviour {
 		countdownToBoss = 6; 
 		animator = GetComponent<Animator>();
 		canHitPlayer = true;
+		changeLaserHeight ();
 	}
 	
 	// Update is called once per frame
@@ -77,19 +78,19 @@ public class laserScript : MonoBehaviour {
 		switch (Random.Range(0, 4))
 		{
 		case 3:
-			transform.position = new Vector3(transform.position.x, -38f, transform.position.z);
+			transform.position = new Vector3(transform.position.x, -39f, transform.position.z);
 			break;
 		case 2:
-			transform.position = new Vector3(transform.position.x, -21f, transform.position.z);
+			transform.position = new Vector3(transform.position.x, -18f, transform.position.z);
 			break;
 		case 1:
-			transform.position = new Vector3(transform.position.x, 5f, transform.position.z);
+			transform.position = new Vector3(transform.position.x, 8f, transform.position.z);
 			break;		
 		case 0:
-			transform.position = new Vector3(transform.position.x, 25f, transform.position.z);
+			transform.position = new Vector3(transform.position.x, 28f, transform.position.z);
 			break;
 		default:
-			transform.position = new Vector3(transform.position.x, 6f, transform.position.z);
+			transform.position = new Vector3(transform.position.x, 8f, transform.position.z);
 			break;
 		}
 		}
@@ -97,7 +98,7 @@ public class laserScript : MonoBehaviour {
 	void OnTriggerStay2D(Collider2D hitInfo){//damages player if they hit the laser
 		//Debug.Log ("You got hit");
 
-		if (hitInfo.name == "Player" && canHitPlayer && spriteRenderL.sprite == postLaser) {
+		if (hitInfo.name == "Player" && canHitPlayer && animator.GetInteger("on_off") == 2) {
 			PlayerController.hp -= 1;
 			canHitPlayer = false;
 		}
