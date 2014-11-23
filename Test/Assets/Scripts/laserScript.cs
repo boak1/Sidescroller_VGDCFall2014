@@ -60,19 +60,19 @@ public class laserScript : MonoBehaviour {
 		switch (Random.Range(0, 3))
 		{
 		case 3:
-			transform.position = new Vector3(transform.position.x, -26f, transform.position.z);
+			transform.position = new Vector3(transform.position.x, -38f, transform.position.z);
 			break;
 		case 2:
-			transform.position = new Vector3(transform.position.x, -4f, transform.position.z);
+			transform.position = new Vector3(transform.position.x, -21f, transform.position.z);
 			break;
 		case 1:
-			transform.position = new Vector3(transform.position.x, 18f, transform.position.z);
+			transform.position = new Vector3(transform.position.x, 5f, transform.position.z);
 			break;		
 		case 0:
-			transform.position = new Vector3(transform.position.x, 38f, transform.position.z);
+			transform.position = new Vector3(transform.position.x, 25f, transform.position.z);
 			break;
 		default:
-			transform.position = new Vector3(transform.position.x, 18f, transform.position.z);
+			transform.position = new Vector3(transform.position.x, 6f, transform.position.z);
 			break;
 		}
 		}
