@@ -6,57 +6,72 @@ public class laserScript : MonoBehaviour {
 	public Sprite preLaser;
 	public Sprite postLaser;
 	public Sprite invisible;
+
+	//these are timing floats for laser duration
 	private float cooldown;
 	public float cooldownStart;
 
-	private SpriteRenderer spriteRenderL;
 
-	public int countdownToBoss;
-	public treeBoss TBoss;
-	private bool newColor;
+	private SpriteRenderer spriteRenderL; //switches between sprites
+	private Animator animator;// switches between animations
+	public int countdownToBoss; // number of laser cycles before boss appears
+	public treeBoss TBoss; //refference to the boss gameobject/script
+	private bool newColor;	//tells the script whether or not to change boss color
+	private bool changeHeight;
 	// Use this for initialization
 	void Start () {
 		spriteRenderL = GetComponent<SpriteRenderer>();
-		if (spriteRenderL.sprite == null)
 		spriteRenderL.sprite = invisible;
 		cooldown = cooldownStart;
 		newColor = false;
-		countdownToBoss = 6;
+		changeHeight = false;
+		countdownToBoss = 6; 
+		animator = GetComponent<Animator>();
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		cooldown -= Time.deltaTime;
-		if (cooldown > 0.1 && cooldown <= 1.1) {
-			spriteRenderL.sprite = preLaser;
+		cooldown -= Time.deltaTime;//transitions through the laser cycle
 
-				} 
-		else if (cooldown > 0 && cooldown <= 0.1) {
+		if (cooldown > 0.1 && cooldown <= 1.1) {//time to charge attack
+			animator.SetInteger("on_off", 1);//this is the code to change a value in an animator
+
+		} 
+		else if (cooldown > 0 && cooldown <= 0.1) {//time to fire attack
+			animator.SetInteger("on_off", 2);
 			spriteRenderL.sprite = postLaser;
-			if (newColor && TBoss.bossOnScreen){
+			if (newColor && TBoss.bossOnScreen){//changes the boss color/sprite
 				TBoss.changeBoss();
 				newColor = false;
 			}
 				} 
-		else if(cooldown <= 0){
+		else if(cooldown <= 0){//turn laser off, reset cycle
+			animator.SetInteger("on_off", 0);
+
 			spriteRenderL.sprite = invisible;
 			cooldown = cooldownStart;
 			newColor = true;
-			changeLaserHeight();
-			if (countdownToBoss == 0)
+			changeHeight = true;
+
+			if (countdownToBoss == 0)//counts down to and starts boss fight
 				TBoss.moveBossOnScreen();
 			else if(countdownToBoss > 0)
 				countdownToBoss--;
 		}
-		else {
+		else {//turns off laser, waits, reposition's laser
+			animator.SetInteger("on_off", 0);
 			spriteRenderL.sprite = invisible;
 
+			if (changeHeight)
+			changeLaserHeight();//repositions laser
+			changeHeight = false;
 				}
 
 	
 	}
 
-	public void changeLaserHeight(){
+	public void changeLaserHeight(){//randomly repositions the laser
 		switch (Random.Range(0, 3))
 		{
 		case 3:
@@ -77,7 +92,7 @@ public class laserScript : MonoBehaviour {
 		}
 		}
 
-	void OnTriggerStay2D(Collider2D hitInfo){
+	void OnTriggerStay2D(Collider2D hitInfo){//damages player if they hit the laser
 		//Debug.Log ("You got hit");
 
 		if (hitInfo.name == "Player" && spriteRenderL.sprite == postLaser) {
