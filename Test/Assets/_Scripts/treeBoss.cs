@@ -37,7 +37,7 @@ using System.Collections;
 			Application.LoadLevel ("winscene"); //moves to game Win screen
 
 		if (bossOnScreen && !moved){
-			transform.position = new Vector3 (60f, transform.position.y, transform.position.z);
+			transform.position = new Vector3 (50f, transform.position.y, transform.position.z);
 			moved = true;
 		}
 
