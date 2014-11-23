@@ -72,7 +72,7 @@ public class laserScript : MonoBehaviour {
 	}
 
 	public void changeLaserHeight(){//randomly repositions the laser
-		switch (Random.Range(0, 3))
+		switch (Random.Range(0, 4))
 		{
 		case 3:
 			transform.position = new Vector3(transform.position.x, -38f, transform.position.z);

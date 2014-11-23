@@ -29,10 +29,11 @@ public class platformSwitch : MonoBehaviour
 		if (letters) {
 			spriteRendererH.sprite = blankPlatform;
 			letters = false;
-		}
-		else 
+		} 
+		else {
 			spriteRendererH.sprite = letterPlatform; 
-		
+			letters = true;
+		}
 	}
 
 }
