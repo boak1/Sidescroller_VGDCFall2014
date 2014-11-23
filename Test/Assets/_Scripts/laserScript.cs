@@ -18,6 +18,7 @@ public class laserScript : MonoBehaviour {
 	public treeBoss TBoss; //refference to the boss gameobject/script
 	private bool newColor;	//tells the script whether or not to change boss color
 	private bool changeHeight;
+	private bool canHitPlayer;
 	// Use this for initialization
 	void Start () {
 		spriteRenderL = GetComponent<SpriteRenderer>();
@@ -27,7 +28,7 @@ public class laserScript : MonoBehaviour {
 		changeHeight = false;
 		countdownToBoss = 6; 
 		animator = GetComponent<Animator>();
-
+		canHitPlayer = true;
 	}
 	
 	// Update is called once per frame
@@ -62,6 +63,7 @@ public class laserScript : MonoBehaviour {
 		else {//turns off laser, waits, reposition's laser
 			animator.SetInteger("on_off", 0);
 			spriteRenderL.sprite = invisible;
+			canHitPlayer = true;
 
 			if (changeHeight)
 			changeLaserHeight();//repositions laser
@@ -95,8 +97,9 @@ public class laserScript : MonoBehaviour {
 	void OnTriggerStay2D(Collider2D hitInfo){//damages player if they hit the laser
 		//Debug.Log ("You got hit");
 
-		if (hitInfo.name == "Player" && spriteRenderL.sprite == postLaser) {
+		if (hitInfo.name == "Player" && canHitPlayer && spriteRenderL.sprite == postLaser) {
 			PlayerController.hp -= 1;
+			canHitPlayer = false;
 		}
 	}
 
