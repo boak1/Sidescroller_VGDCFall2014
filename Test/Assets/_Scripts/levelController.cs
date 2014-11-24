@@ -6,11 +6,11 @@ public class levelController : MonoBehaviour
 {
 
 	public treeBoss TBoss; //refference to the boss gameobject/script
-	private bool newColor;	//tells the script whether or not to change boss color
+	private bool newColor  = false;	//tells the script whether or not to change boss color
 
 	public laserScript primaryLaser;
 	private List<laserScript> allLasers;
-	private int laserCycles;
+	private double laserCycles = 0;
 	private float laserCycleTime;
 	private float laserChargeTime;
 	private int pastLaserHeight1 = 3, pastLaserHeight2 = 0;
@@ -18,8 +18,6 @@ public class levelController : MonoBehaviour
 
 	// Use this for initialization
 	void Start () {
-		newColor = false;
-		laserCycles = 0;
 
 		allLasers = new List<laserScript> ();
 		allLasers.Add(primaryLaser);
@@ -35,23 +33,27 @@ public class levelController : MonoBehaviour
 				newColor = false;
 			}
 			
-			if (laserCycles == 6){//counts down to and starts boss fight
+			if (laserCycles == 7){//counts down to and starts boss fight
 				TBoss.moveBossOnScreen();
-				//change laser timer
-				//add more lasers(multiple at once)
+
+				//<--add more lasers(multiple at once)
+				//<--offset laser timer
+				//<--shorten laser timer
+				laserCycles++; //makes the else if false so it doesn't keep getting called
 			}
-			else if(laserCycles == 50){
-				//switch background;
-				//start music
-				//timeToPrelaser = .5f;//less time to react
-				//cooldownStart = 2f;
-				//more lasers
-			laserScript newLaserScript = (laserScript)Instantiate(primaryLaser, primaryLaser.transform.position, primaryLaser.transform.rotation);
+			else if(laserCycles == 3){
+				//<--switch background;
+				//<--start music
+				//<--offset laser timer
+				//<--shorten laser timer
 
-			newLaserScript.notPrimary();
-
-		//	allLasers.Add(newLaserScript);
-		//	newLaserScript.levelControl = this;
+				//clones primary laser so ther are two lasers firing now
+				laserScript newLaserScript = (laserScript)Instantiate(primaryLaser, primaryLaser.transform.position, primaryLaser.transform.rotation);
+				newLaserScript.notPrimary();//stops new laser from triggering events
+				
+				allLasers.Add(newLaserScript);
+				laserCycles++;//makes the else if false so it doesn't keep getting called
+				
 			}
 		}
 		
@@ -64,13 +66,13 @@ public class levelController : MonoBehaviour
 
 	public int getLaserHeight(){//makes sure no two lasers are at the same height, returns an int between 0 and 3
 		while (true){
-			int temp = Random.Range(0, 4);
-			Debug.Log ("" + temp + pastLaserHeight1 + pastLaserHeight2);
+			int temp = Random.Range(0, 4);//picks a random laser height
+			//Debug.Log ("" + temp + pastLaserHeight1 + pastLaserHeight2);
 
-			if(temp != pastLaserHeight1 && temp != pastLaserHeight2){
+			if(temp != pastLaserHeight1 && temp != pastLaserHeight2){//makes sure other lasers aren't firing there
 				pastLaserHeight2 = pastLaserHeight1;
 				pastLaserHeight1 = temp;
-				Debug.Log (" || " + temp + pastLaserHeight1 + pastLaserHeight2);
+				//Debug.Log (" || " + temp + pastLaserHeight1 + pastLaserHeight2);
 				return temp;
 			}
 
