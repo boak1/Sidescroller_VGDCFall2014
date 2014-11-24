@@ -14,10 +14,16 @@ public class PlayerController : MonoBehaviour {
 	public treeBoss TBoss;
 	//set starting health to 3
 	public static int hp = 3;  //static so other scripts can see it. call with Test.hp
+
+	//audio-related vars; will eventually have vars for teleport, player shoot, and player damaged sounds
+	public AudioClip sfxTeleport = new AudioClip();
+	private AudioSource audioSource = new AudioSource();	//only one Audio Source needed apparently
+
 	// Use this for initialization
 	void Start () {
 		current_platform = platformS;
 		hp = 3; //on restarting after a game over hp becomes 3 again
+		audioSource = GetComponent<AudioSource>();
 	}
 	//int LX = 0f,LY = 0f, nextLX = 10f, nextLY = 0f; //player Coordinates 
 	// Update is called once per frame
@@ -29,18 +35,22 @@ public class PlayerController : MonoBehaviour {
 		if (Input.GetKeyDown(KeyCode.A))
 		{
 			current_platform = platformA;
+			audioSource.PlayOneShot(sfxTeleport, .8f);
 		}
 		if (Input.GetKeyDown (KeyCode.S)) 
 		{
 			current_platform = platformS;
+			audioSource.PlayOneShot(sfxTeleport, .8f);
 		}
 		if (Input.GetKeyDown (KeyCode.D)) 
 		{
 			current_platform = platformD;
+			audioSource.PlayOneShot(sfxTeleport, .8f);
 		}
 		if (Input.GetKeyDown (KeyCode.F)) 
 		{
 			current_platform = platformF;
+			audioSource.PlayOneShot(sfxTeleport, .8f);
 		}
 
 

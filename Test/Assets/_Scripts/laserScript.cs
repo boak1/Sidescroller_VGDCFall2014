@@ -11,6 +11,13 @@ public class laserScript : MonoBehaviour {
 	private float cooldown;
 	public float cooldownStart;
 
+	//these are vars for sound effects
+	public AudioClip sfxLaserCharge = new AudioClip();
+	public AudioClip sfxLaserShoot = new AudioClip();
+	private AudioSource audioSource = new AudioSource();	//do I need a separate audio source per clip? (guess not)
+	private bool chargeSoundPlayed; //prevents sound from playing back every frame
+	private bool shootSoundPlayed;	//prevents sound from playing back every frame
+
 	public levelController levelControl;
 
 	private SpriteRenderer spriteRenderL; //switches between sprites
@@ -28,9 +35,13 @@ public class laserScript : MonoBehaviour {
 		changeHeight = false;
 		animator = GetComponent<Animator>();
 		canHitPlayer = true;
-		changeLaserHeight ();
+		changeLaserHeight();
 		timeToPrelaser = 1.1f;
 		primaryLaser = levelControl.getPrimaryLaser();
+
+		audioSource = GetComponent<AudioSource>();
+		chargeSoundPlayed = false;
+		shootSoundPlayed = false;
 	}
 	
 	// Update is called once per frame
@@ -40,10 +51,19 @@ public class laserScript : MonoBehaviour {
 		if (cooldown > 0.1 && cooldown <= timeToPrelaser) {//time to charge attack
 			animator.SetInteger("on_off", 1);//this is the code to change a value in an animator
 
+			if (!chargeSoundPlayed) {
+				audioSource.PlayOneShot(sfxLaserCharge, .8f);
+				chargeSoundPlayed = true;
+			}
 		} 
 		else if (cooldown > 0 && cooldown <= 0.1) {//time to fire attack
 			animator.SetInteger("on_off", 2);
 			spriteRenderL.sprite = postLaser;
+
+			if (!shootSoundPlayed) {
+				audioSource.PlayOneShot(sfxLaserShoot, .8f);
+				shootSoundPlayed = true;
+			}
 		} 
 		else if(cooldown <= 0){//turn laser off, reset cycle
 			animator.SetInteger("on_off", 0);
@@ -51,6 +71,9 @@ public class laserScript : MonoBehaviour {
 			spriteRenderL.sprite = invisible;
 			cooldown = cooldownStart;
 			changeHeight = true;
+
+			chargeSoundPlayed = false;
+			shootSoundPlayed = false;
 
 			if(primaryLaser)
 			levelControl.updateLaserInfo();
@@ -102,6 +125,5 @@ public class laserScript : MonoBehaviour {
 	public void notPrimary(){
 		primaryLaser = false;		
 	}
-
 
 }
