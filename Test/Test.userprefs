@@ -1,12 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\laserScript.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\levelController.cs">
     <Files>
-      <File FileName="Assets\_Scripts\BackgroundScroll.cs" Line="13" Column="62" />
-      <File FileName="Assets\_Scripts\laserScript.cs" Line="89" Column="10" />
-      <File FileName="Assets\_Scripts\PlayerController.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\platformSwitch.cs" Line="35" Column="19" />
-      <File FileName="Assets\_Scripts\PlatformData.cs" Line="10" Column="21" />
+      <File FileName="Assets\_Scripts\laserScript.cs" Line="88" Column="61" />
+      <File FileName="Assets\_Scripts\levelController.cs" Line="27" Column="1" />
+      <File FileName="Assets\_Scripts\PlayerController.cs" Line="79" Column="24" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
