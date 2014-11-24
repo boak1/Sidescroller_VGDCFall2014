@@ -36,29 +36,34 @@ public class levelController : MonoBehaviour
 			if (laserCycles == 7){//counts down to and starts boss fight
 				TBoss.moveBossOnScreen();
 
-				//<--add more lasers(multiple at once)
-				//<--offset laser timer
+				Invoke ("newLaser", 1.5f);//add more lasers(multiple at once)and offset laser from others
 				//<--shorten laser timer
 				laserCycles++; //makes the else if false so it doesn't keep getting called
 			}
 			else if(laserCycles == 3){
 				//<--switch background;
 				//<--start music
-				//<--offset laser timer
 				//<--shorten laser timer
 
-				//clones primary laser so ther are two lasers firing now
-				laserScript newLaserScript = (laserScript)Instantiate(primaryLaser, primaryLaser.transform.position, primaryLaser.transform.rotation);
-				newLaserScript.notPrimary();//stops new laser from triggering events
-				
-				allLasers.Add(newLaserScript);
+			Invoke ("newLaser", 0.75f);//add more lasers(multiple at once)and offset laser from others
+
+
 				laserCycles++;//makes the else if false so it doesn't keep getting called
 				
 			}
 		}
 		
 		
-	
+	private void newLaser(){
+		//clones primary laser so ther are two lasers firing now
+		laserScript newLaserScript = (laserScript)Instantiate(primaryLaser, primaryLaser.transform.position, primaryLaser.transform.rotation);
+		newLaserScript.notPrimary();//stops new laser from triggering events
+		
+		allLasers.Add(newLaserScript);
+		}
+
+
+
 	public void updateLaserInfo(){//tells levelcontoller that a new laser cycle has gone by
 		laserCycles++;
 		newColor = true;
