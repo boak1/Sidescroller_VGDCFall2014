@@ -11,7 +11,15 @@ public class PlayerController : MonoBehaviour {
 	public GameObject platformD;
 	public GameObject platformF;
 	GameObject current_platform;
+
 	public treeBoss TBoss;
+
+	//Player lasers to shoot
+	public GameObject redLaser;
+	public GameObject greenLaser;
+	public GameObject blueLaser;
+	private GameObject current_laser;
+
 	//set starting health to 3
 	public static int hp = 3;  //static so other scripts can see it. call with Test.hp
 
@@ -24,6 +32,7 @@ public class PlayerController : MonoBehaviour {
 		current_platform = platformS;
 		hp = 3; //on restarting after a game over hp becomes 3 again
 		audioSource = GetComponent<AudioSource>();
+		//current_laser = new GameObject[10];
 	}
 	//int LX = 0f,LY = 0f, nextLX = 10f, nextLY = 0f; //player Coordinates 
 	// Update is called once per frame
@@ -57,14 +66,20 @@ public class PlayerController : MonoBehaviour {
 		//shooting
 		if (Input.GetKeyDown (KeyCode.J)) 
 		{
+			current_laser = (GameObject)Instantiate(redLaser, transform.position+new Vector3(75, 0, 0), Quaternion.identity);
+			Invoke ("DestroyLaser", .05f);
 			TBoss.shootBoss("red");
 		}
 		if (Input.GetKeyDown (KeyCode.K)) 
 		{
+			current_laser = (GameObject)Instantiate(blueLaser, transform.position+new Vector3(75, 0, 0), Quaternion.identity);
+			Invoke ("DestroyLaser", .05f);
 			TBoss.shootBoss("blue");
 		}
 		if (Input.GetKeyDown (KeyCode.L)) 
 		{
+			current_laser = (GameObject)Instantiate(greenLaser, transform.position+new Vector3(75, 0, 0), Quaternion.identity);
+			Invoke ("DestroyLaser", .05f);
 			TBoss.shootBoss("green");
 		}
 
@@ -81,7 +96,9 @@ public class PlayerController : MonoBehaviour {
 		transform.position = current_platform.transform.position + new Vector3(0f, platformData.offset(), 0f);
 	}
 
-
+	void DestroyLaser(){
+		Destroy (current_laser);
+	}
 
 	/*
 	GameObject Platform(){
