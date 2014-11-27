@@ -70,13 +70,13 @@ public class PlayerController : MonoBehaviour {
 			Invoke ("DestroyLaser", .05f);
 			TBoss.shootBoss("red");
 		}
-		if (Input.GetKeyDown (KeyCode.K)) 
+		else if (Input.GetKeyDown (KeyCode.K)) 
 		{
 			current_laser = (GameObject)Instantiate(blueLaser, transform.position+new Vector3(75, 0, 0), Quaternion.identity);
 			Invoke ("DestroyLaser", .05f);
 			TBoss.shootBoss("blue");
 		}
-		if (Input.GetKeyDown (KeyCode.L)) 
+		else if (Input.GetKeyDown (KeyCode.L)) 
 		{
 			current_laser = (GameObject)Instantiate(greenLaser, transform.position+new Vector3(75, 0, 0), Quaternion.identity);
 			Invoke ("DestroyLaser", .05f);

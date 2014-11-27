@@ -6,9 +6,10 @@ using System.Collections;
 	public Sprite greenBoss; 
 	public Sprite blueBoss;
 	public Sprite redBoss; 
-	private SpriteRenderer bossRender; 
+	private SpriteRenderer bossRender;
 
-	private int bossHP; //boss health
+    public int maxBossHP = 20; 
+	public int bossHP = 20; //boss health
 	private int bossColor; //0 to 3 : normal to red
 	public bool bossOnScreen, bossWasShot, moved; //whether or not boss should be on the screen
 	public string laserColor;

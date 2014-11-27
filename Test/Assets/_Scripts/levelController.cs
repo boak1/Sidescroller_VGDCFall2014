@@ -51,11 +51,15 @@ public class levelController : MonoBehaviour
 				laserCycles++;//makes the else if false so it doesn't keep getting called
 				
 			}
+            if (TBoss.bossHP == TBoss.maxBossHP / 2) {
+                Invoke ("newLaser", primaryLaser.cooldown -.75f);
+                TBoss.bossHP--;
+            }
 		}
 		
 		
 	private void newLaser(){
-		//clones primary laser so ther are two lasers firing now
+		//clones primary laser so there is an another laser firing
 		laserScript newLaserScript = (laserScript)Instantiate(primaryLaser, primaryLaser.transform.position, primaryLaser.transform.rotation);
 		newLaserScript.notPrimary();//stops new laser from triggering events
 		

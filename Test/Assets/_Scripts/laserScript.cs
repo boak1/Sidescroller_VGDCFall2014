@@ -8,7 +8,7 @@ public class laserScript : MonoBehaviour {
 	public Sprite invisible;
 
 	//these are timing floats for laser duration
-	private float cooldown;
+	public float cooldown;
 	public float cooldownStart;
 
 	//these are vars for sound effects
