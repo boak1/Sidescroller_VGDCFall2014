@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 public class PlatformData : MonoBehaviour {
 	public float offsetValue;
+	private bool teleportableValue = true;
 	// Use this for initialization
 	float platMoveY;
 	float startY;
@@ -29,5 +30,15 @@ public class PlatformData : MonoBehaviour {
 		return offsetValue;
 	}
 
+	public bool teleportable(){
+		return teleportableValue;
+	}
 
+	public void lockPlatform(){
+		teleportableValue = false;
+	}
+
+	public void unlockPlatform(){
+		teleportableValue = true;
+	}
 }

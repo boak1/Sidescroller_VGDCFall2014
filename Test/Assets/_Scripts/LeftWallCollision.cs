@@ -19,6 +19,9 @@ public class LeftWallCollision : MonoBehaviour {
 
 
 	public GameObject platformHolder;
+
+
+	public treeBoss TBoss;
 	// Use this for initialization
 	void Start () {
 		platformHolder = platformF;
@@ -58,9 +61,15 @@ public class LeftWallCollision : MonoBehaviour {
 		*/
 
 		if (hitInfo.tag == "Platform"){
+			//PlatformData platformData = hitInfo.GetComponent<PlatformData>();
+			//platformData.lockPlatform();
 
-			hitInfo.transform.position += new Vector3(mainCam.ScreenToWorldPoint(new Vector3(Screen.width*1.65f,0f,0f)).x, 0f, 0f);
-
+			if (!TBoss.bossOnScreen){
+				hitInfo.transform.position += new Vector3(mainCam.ScreenToWorldPoint(new Vector3(Screen.width*1.65f,0f,0f)).x, 0f, 0f);
+			}
+			else{
+				hitInfo.transform.position += new Vector3(mainCam.ScreenToWorldPoint(new Vector3(Screen.width*1.45f,0f,0f)).x, 0f, 0f);
+			}
 
 			//IDEAS:
 			//
