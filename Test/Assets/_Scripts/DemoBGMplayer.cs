@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-/* BUGS:
- * When the next clip to be played is the same as before, the last second of the currently playing clip does not play
- *      Lazy workaround: increase .
+/* TODO:
+ * Have music immediately switch to the 'intense' loop when the boss appears instead of waiting until current loop finishes
  */
 
 public class DemoBGMplayer : MonoBehaviour {
@@ -20,7 +19,6 @@ public class DemoBGMplayer : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        //laserCycles = level.getLaserCycleNumber();                  //for some reason this is not getting set properly
         int i = 0;
         while (i < 2)
         {
@@ -42,7 +40,7 @@ public class DemoBGMplayer : MonoBehaviour {
         double time = AudioSettings.dspTime;
         if (level.isTreeBossOnScreen())
         {
-            clipIndex = 1;		//keep loading clip[0] until the boss appears
+            clipIndex = 1;		//keep loading clip[0] until the boss appears, then load clip[1]
         } else {
             clipIndex = 0;
         }
