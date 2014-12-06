@@ -105,4 +105,9 @@ public class levelController : MonoBehaviour
 	public float getLaserChargeTime(){
 		return laserChargeTime;
 	}
+
+    public bool isTreeBossOnScreen()
+    {
+        return TBoss.bossOnScreen;
+    }
 }
