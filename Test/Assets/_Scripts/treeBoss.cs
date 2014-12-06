@@ -13,6 +13,8 @@ using System.Collections;
 	private int bossColor; //0 to 3 : normal to red
 	public bool bossOnScreen, bossWasShot, moved; //whether or not boss should be on the screen
 	public string laserColor;
+
+	public GameObject healthBar;
 	// Use this for initialization
 	void Start () {
 			
@@ -47,6 +49,7 @@ using System.Collections;
 			    bossRender.sprite == blueBoss && laserColor == "blue" ||
 			    bossRender.sprite == greenBoss && laserColor == "green" ){
 				bossHP--; //if player fired right laser damage boss
+				healthBar.transform.position += new Vector3(1.5f, 0,0);
 				//Debug.Log(bossHP);
 			}
 			else 
