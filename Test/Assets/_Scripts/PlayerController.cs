@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour {
 	public GameObject greenLaser;
 	public GameObject blueLaser;
 	private GameObject current_laser;
-	private float shooting_cooldown = .1f;
+	//private float shooting_cooldown = .1f;
 
 	//set starting health to 3
 	public static int hp = 3;  //static so other scripts can see it. call with Test.hp
@@ -65,28 +65,31 @@ public class PlayerController : MonoBehaviour {
 
 
 		//shooting
-		shooting_cooldown -= Time.deltaTime;
+		//shooting_cooldown -= Time.deltaTime;
 
-		if (Input.GetKeyDown (KeyCode.J) && shooting_cooldown <= 0) 
+		if (Input.GetKeyDown (KeyCode.J) /* && shooting_cooldown <= 0 */) 
 		{
+			if (current_laser != null) DestroyLaser();
 			current_laser = (GameObject)Instantiate(redLaser, transform.position+new Vector3(75, 0, 0), Quaternion.identity);
 			Invoke ("DestroyLaser", .05f);
 			TBoss.shootBoss("red");
-			shooting_cooldown = 0.1f;
+			//shooting_cooldown = 0.1f;
 		}
-		else if (Input.GetKeyDown (KeyCode.K) && shooting_cooldown <= 0) 
+		else if (Input.GetKeyDown (KeyCode.K)  /* &&  shooting_cooldown <= 0 */) 
 		{
+			if (current_laser != null) DestroyLaser();
 			current_laser = (GameObject)Instantiate(blueLaser, transform.position+new Vector3(75, 0, 0), Quaternion.identity);
 			Invoke ("DestroyLaser", .05f);
 			TBoss.shootBoss("blue");
-			shooting_cooldown = 0.1f;
+			//shooting_cooldown = 0.1f;
 		}
-		else if (Input.GetKeyDown (KeyCode.L) && shooting_cooldown <= 0) 
+		else if (Input.GetKeyDown (KeyCode.L) /* && shooting_cooldown <= 0 */) 
 		{
+			if (current_laser != null) DestroyLaser();
 			current_laser = (GameObject)Instantiate(greenLaser, transform.position+new Vector3(75, 0, 0), Quaternion.identity);
 			Invoke ("DestroyLaser", .05f);
 			TBoss.shootBoss("green");
-			shooting_cooldown = 0.1f;
+			//shooting_cooldown = 0.1f;
 		}
 
 

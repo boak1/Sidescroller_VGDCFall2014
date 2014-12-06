@@ -1,16 +1,15 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\LeftWallCollision.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\PlayerController.cs">
     <Files>
+      <File FileName="Assets\_Scripts\PlayerController.cs" Line="68" Column="5" />
       <File FileName="Assets\_Scripts\laserScript.cs" Line="79" Column="17" />
-      <File FileName="Assets\_Scripts\PlayerController.cs" Line="106" Column="40" />
-      <File FileName="Assets\_Scripts\laserScript.cs" Line="49" Column="43" />
       <File FileName="Assets\_Scripts\PlatformData.cs" Line="34" Column="28" />
       <File FileName="Assets\_Scripts\levelController.cs" Line="31" Column="38" />
       <File FileName="Assets\_Scripts\treeBoss.cs" Line="14" Column="2" />
       <File FileName="Assets\_Scripts\healthScript.cs" Line="11" Column="42" />
       <File FileName="Assets\_Scripts\LeftWallCollision.cs" Line="71" Column="103" />
-      <File FileName="Assets\_Scripts\RightWallReScroll.cs" Line="26" Column="6" />
+      <File FileName="Assets\_Scripts\RightWallReScroll.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
