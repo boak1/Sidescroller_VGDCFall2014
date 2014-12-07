@@ -15,6 +15,8 @@ public class laserScript : MonoBehaviour {
 	public AudioClip sfxLaserCharge = new AudioClip();
 	public AudioClip sfxLaserShoot = new AudioClip();
 	private AudioSource audioSource = new AudioSource();	//do I need a separate audio source per clip? (guess not)
+    public float sfxLaserChargeVolume = .7f;
+    public float sfxLaserShootVolume = .7f;
 	private bool chargeSoundPlayed; //prevents sound from playing back every frame
 	private bool shootSoundPlayed;	//prevents sound from playing back every frame
 
@@ -52,7 +54,7 @@ public class laserScript : MonoBehaviour {
 			animator.SetInteger("on_off", 1);//this is the code to change a value in an animator
 
 			if (!chargeSoundPlayed) {
-				audioSource.PlayOneShot(sfxLaserCharge, .8f);
+				audioSource.PlayOneShot(sfxLaserCharge, sfxLaserChargeVolume);
 				chargeSoundPlayed = true;
 			}
 		} 
@@ -61,7 +63,7 @@ public class laserScript : MonoBehaviour {
 			spriteRenderL.sprite = postLaser;
 
 			if (!shootSoundPlayed) {
-				audioSource.PlayOneShot(sfxLaserShoot, .8f);
+				audioSource.PlayOneShot(sfxLaserShoot, sfxLaserShootVolume);
 				shootSoundPlayed = true;
 			}
 		} 
