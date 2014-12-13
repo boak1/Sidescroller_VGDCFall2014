@@ -11,7 +11,8 @@ public class DemoBGMplayer : MonoBehaviour {
     public int numBeatsPerSegment = 32;	    //each clip is 8 measures long at 157 bpm; 8 measures * 4 beats per measure = 32
     public AudioClip[] clips = new AudioClip[3];
     public levelController level;
-    public float fadeInRate = .26f;          //specifies how fast to fade in the first clip at startup (true rate is fadeInRate * Time.deltaTime)
+    public float fadeInRate = .26f;         //specifies how fast to fade in the first clip at startup (true rate is fadeInRate * Time.deltaTime)
+    public float musicVolume = .8f;         //specifies the volume of playback for all clips; goes from 0.0f to 1.0f
 
     private double nextEventTime;
     private int clipIndex = 0;
@@ -38,7 +39,7 @@ public class DemoBGMplayer : MonoBehaviour {
 	void Update () {
         if (!running)
             return;
-        if (audioSources[0].volume < 1.0f)
+        if (audioSources[0].volume < musicVolume)
         {
             audioSources[0].volume += Time.deltaTime * fadeInRate;
         }
